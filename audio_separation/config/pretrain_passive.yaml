@@ -1,0 +1,13 @@
+BASE_TASK_CONFIG_PATH: "configs/tasks/pretrain_passive.yaml"
+SENSORS: []
+
+TRAINER_NAME: "passive"
+NUM_EPOCHS: 1000
+
+
+Pretrain:
+  Passive:
+    ### HYPERPARAMS
+    lr: 5.0e-4
+    eps: 1.0e-5
+    max_grad_norm: 0.8

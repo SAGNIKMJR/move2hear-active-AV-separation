@@ -1,0 +1,21 @@
+BASE_TASK_CONFIG_PATH: "configs/tasks/nearTarget/test_nearTarget.yaml"
+NUM_PROCESSES: 1
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+EXTRA_DEPTH: True
+
+EVAL_EPISODE_COUNT: 1000 # 2, 1000
+
+COMPUTE_EVAL_METRICS: True
+EVAL_METRICS_TO_COMPUTE: ["si_sdr"]
+
+EVAL:
+  SPLIT: "test_nearTarget_15scenes_1000episodes"
+  USE_CKPT_CONFIG: True
+
+RL:
+  PPO:
+    deterministic_eval: False
+    hidden_size: 512
+
+    # needed to turn off bn
+    use_ddppo: True

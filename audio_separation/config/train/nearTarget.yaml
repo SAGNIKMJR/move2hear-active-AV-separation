@@ -1,0 +1,57 @@
+BASE_TASK_CONFIG_PATH: "configs/tasks/nearTarget/train_nearTarget.yaml"
+NUM_PROCESSES: 14
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+EXTRA_DEPTH: True
+
+### 37.6M steps
+## 1 GPU
+# NUM_UPDATES: 134285
+# CHECKPOINT_INTERVAL: 715
+
+## 8 GPU
+NUM_UPDATES: 16786
+CHECKPOINT_INTERVAL: 89
+
+LOG_INTERVAL: 50
+
+
+RL:
+  PPO:
+    num_updates_per_cycle: 6 # 1, 6
+
+    pretrained_passive_separators_ckpt: "runs/passive_pretrain/temp_tillConvergence/data/best_ckpt_nonoverlapping_val.pth"
+    train_passive_separators: False
+
+    hidden_size: 512
+
+    value_loss_coef: 0.5
+    bin_separation_loss_coef: 1.0
+    mono_conversion_loss_coef: 1.0
+    entropy_coef: 0.20
+    lr_pol: 1.0e-4
+    lr_sep: 5.0e-4
+
+    clip_param: 0.1
+    ppo_epoch: 4
+    num_mini_batch: 1
+    eps: 1.0e-5
+    max_grad_norm: 0.5
+    num_steps: 20
+
+    use_gae: True
+    gamma: 0.99
+    tau: 0.95
+    use_linear_clip_decay: True
+    use_linear_lr_decay: True
+
+    sep_reward_weight: 1.0
+    nav_reward_weight: 0.0
+    extra_reward_multiplier: 10.0
+    reward_window_size: 50
+
+    use_ddppo: True
+    ddppo_distrib_backend: "NCCL"
+    short_rollout_threshold: 1.0    # 0.25
+    sync_frac: 0.6
+    # master_port: 7738
+    # master_addr: "127.0.0.9"

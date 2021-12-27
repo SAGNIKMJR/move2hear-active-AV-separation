@@ -1,0 +1,39 @@
+ENVIRONMENT:
+  MAX_EPISODE_STEPS: 20
+SIMULATOR:
+  SCENE_DATASET: "mp3d"
+  GRID_SIZE: 1.0
+  HABITAT_SIM_V0:
+    GPU_DEVICE_ID: 0
+  RGB_SENSOR:
+    WIDTH: 128
+    HEIGHT: 128
+  DEPTH_SENSOR:
+    WIDTH: 128
+    HEIGHT: 128
+  AUDIO:
+    RIR_SAMPLING_RATE:  16000
+    NORM_TYPE: "l2"
+    GT_MONO_MAG_NORM: 1.2
+
+    MONO_DIR: "data/audio_data/VoxCelebV1TenClasses_MITMusic_ESC50/test_preprocessed"
+
+  TYPE: "HabitatSimAudioEnabledEval"
+  ACTION_SPACE_CONFIG: "audio-separation"
+
+TASK:
+  TYPE: AAViSS
+  SENSORS: ["MIXED_BIN_AUDIO_MAG_SENSOR", "MIXED_BIN_AUDIO_PHASE_SENSOR", "GT_BIN_COMPONENTS_SENSOR",
+            "GT_MONO_COMPONENTS_SENSOR", "TARGET_CLASS_SENSOR"]
+  GOAL_SENSOR_UUID: mixed_bin_audio_mag
+  MEASUREMENTS: ["GEODESIC_DISTANCE_TO_TARGET_AUDIO_SOURCE", "NORMALIZED_GEODESIC_DISTANCE_TO_TARGET_AUDIO_SOURCE"]
+  POSSIBLE_ACTIONS: ["MOVE_FORWARD", "TURN_LEFT", "TURN_RIGHT"]
+
+
+DATASET:
+  TYPE: "AAViSS"
+  SPLIT: "train_nearTarget_24scenes_112009episodes"
+  VERSION: 'v1'
+  CONTENT_SCENES: ["*"]
+  SCENES_DIR: "../sound_spaces/scene_datasets/mp3d"
+  DATA_PATH: "data/active_datasets/{version}/{split}/{split}.json.gz"

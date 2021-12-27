@@ -1,0 +1,18 @@
+BASE_TASK_CONFIG_PATH: "configs/tasks/farTarget/valUnheard_farTarget.yaml"
+NUM_PROCESSES: 1
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+EXTRA_DEPTH: True
+
+EVAL_EPISODE_COUNT: 100 # 2, 100
+
+EVAL:
+  SPLIT: "valUnheard_farTarget_8scenes_100episodes"
+  USE_CKPT_CONFIG: True
+
+RL:
+  PPO:
+    deterministic_eval: False
+    hidden_size: 512
+
+    # needed to turn off bn
+    use_ddppo: True

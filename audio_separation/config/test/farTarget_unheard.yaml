@@ -1,0 +1,23 @@
+BASE_TASK_CONFIG_PATH: "configs/tasks/farTarget/testUnheard_farTarget.yaml"
+NUM_PROCESSES: 1
+SENSORS: ["RGB_SENSOR", "DEPTH_SENSOR"]
+EXTRA_DEPTH: True
+
+EVAL_EPISODE_COUNT: 2 # 2, 1000
+
+COMPUTE_EVAL_METRICS: True
+EVAL_METRICS_TO_COMPUTE: ["si_sdr"]
+
+EVAL:
+  SPLIT: "testUnheard_farTarget_15scenes_1000episodes"
+
+RL:
+  PPO:
+    deterministic_eval: False
+    hidden_size: 512
+
+    switch_policy: True
+    time_thres_for_pol_switch: 80
+
+    # needed to turn off bn
+    use_ddppo: True
