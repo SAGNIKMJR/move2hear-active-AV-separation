@@ -1,5 +1,5 @@
 # Move2Hear: Active Audio-Visual Source Separation
-This repository will ***very soon*** contain a PyTorch implementation of our **ICCV-21 paper** and the associated datasets: 
+This repository contains the PyTorch implementation of our **ICCV-21 paper** and the associated datasets: 
 
 [Move2Hear: Active Audio-Visual Source Separation](http://vision.cs.utexas.edu/projects/move2hear)<br />
 Sagnik Majumder, Ziad Al-Halah, Kristen Grauman<br />
@@ -12,11 +12,13 @@ We introduce the active audio-visual source separation problem, where an agent m
 
 ## Citation
 ```
-@article{majumder2021move2hear,
-  title={Move2Hear: Active Audio-Visual Source Separation},
-  author={Majumder, Sagnik and Al-Halah, Ziad and Grauman, Kristen},
-  journal={arXiv preprint arXiv:2105.07142},
-  year={2021}
+@InProceedings{Majumder_2021_ICCV,
+    author    = {Majumder, Sagnik and Al-Halah, Ziad and Grauman, Kristen},
+    title     = {Move2Hear: Active Audio-Visual Source Separation},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {275-285}
 }
 ```
 
