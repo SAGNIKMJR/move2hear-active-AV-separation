@@ -1541,10 +1541,10 @@ class PPOTrainer(BaseRLTrainer):
         logger.info("Mono STFT L2 loss over all steps --- mean: {mean:.6f}, std: {std:.6f}"\
                     .format(mean=aggregated_stats["mono_loss_all_steps"]["mean"],
                             std=aggregated_stats["mono_loss_all_steps"]["std"]))
-        logger.info("MonoFromMem STFT L2 loss at last step --- mean: {mean:.6f}, std: {mean:.6f}"\
+        logger.info("MonoFromMem STFT L2 loss at last step --- mean: {mean:.6f}, std: {std:.6f}"\
                     .format(mean=aggregated_stats["monoFromMem_loss_last_step"]["mean"],
                             std=aggregated_stats["monoFromMem_loss_last_step"]["std"]))
-        logger.info("MonoFromMem STFT L2 loss over all steps --- mean: {mean:.6f}, std: {mean:.6f}"\
+        logger.info("MonoFromMem STFT L2 loss over all steps --- mean: {mean:.6f}, std: {std:.6f}"\
                     .format(mean=aggregated_stats["monoFromMem_loss_all_steps"]["mean"],
                             std=aggregated_stats["monoFromMem_loss_all_steps"]["std"]))
 
