@@ -19,7 +19,8 @@ RL:
   PPO:
     num_updates_per_cycle: 6 # 1, 6
 
-    pretrained_passive_separators_ckpt: "runs/passive_pretrain/temp_tillConvergence/data/best_ckpt_nonoverlapping_val.pth"
+    # replace PRETRAIN_DIRNAME with name of directory having checkpoints from passive pretraining
+    pretrained_passive_separators_ckpt: "runs/passive_pretrain/PRETRAIN_DIRNAME/data/best_ckpt_nonoverlapping_val.pth"
     train_passive_separators: False
 
     hidden_size: 512
