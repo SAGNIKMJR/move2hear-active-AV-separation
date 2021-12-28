@@ -25,7 +25,15 @@ or parsing ```requirements.txt``` to get the names and versions of individual de
 Download the AAViSS-specific datasets from [this link](https://bit.ly/3sKrvm2), extract the zip and put it under the project root. The extracted *data* directory should have 3 types of data
 1. **audio_data**: the raw monaural audio waveforms for training and evaluation    
 2. **passive_datasets**: the dataset (audio source and receiver pair spatial attributes) for pre-training of passive separators    
-3. **active_datasets**: the data (episode specification) for training of Move2Hear policies      
+3. **active_datasets**: the data (episode specification) for training of Move2Hear policies   
+    
+Make a directory named *sound_spaces* and place it in the same directory as the one where the project root resides. Download the [SoundSpaces](https://github.com/facebookresearch/sound-spaces/blob/main/soundspaces/README.md) Matterport3D **binaural RIRs** and **metadata**, and extract them into directories named ```sound_spaces/binaural_rirs/mp3d``` and ```sound_spaces/metadata/mp3d```, respectively.    
+     
+Download the [https://niessner.github.io/Matterport/](Matterport3D) dataset, cache the observations relevant for the SoundSpaces simulator using [this script](https://github.com/facebookresearch/sound-spaces/blob/main/scripts/cache_observations.py) from the [SoundSpaces repository](https://github.com/facebookresearch/sound-spaces). Use resolutions of ```128 x 128``` for both RGB and depth sensors. Place the cached observations for all scenes (.pkl files) in ```sound_spaces/scene_observations_new```.    
+     
+For further info about the structuring of the associated datasets, refer to ```audio_separation/config/default.py``` or the task configs.              
+
+## Code
 
 ## Citation
 ```
