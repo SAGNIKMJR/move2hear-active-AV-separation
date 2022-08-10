@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
 or by parsing ```requirements.txt``` to get the names and versions of individual dependencies and install them individually.
 
 ## Datasets
-Download the AAViSS-specific datasets from [this link](https://bit.ly/3r02Skb), extract the zip and put it under the project root. The extracted ```data``` directory should have 3 types of data
+Download the AAViSS-specific datasets from [this link](https://bit.ly/3zGpo4A), extract the zip and put it under the project root. The extracted ```data``` directory should have 3 types of data
 1. **audio_data**: the pre-processed and pre-normalized raw monaural audio waveforms for training and evaluation    
 2. **passive_datasets**: the dataset (audio source and receiver pair spatial attributes) for pre-training of passive separators    
 3. **active_datasets**: the dataset (episode specification) for training of Move2Hear policies   
