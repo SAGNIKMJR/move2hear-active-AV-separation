@@ -81,6 +81,12 @@ Compute test metric (STFT l2 loss or SI-SDR) values using ```scripts/separated_a
       
 For unheard sounds, use ```config/test/nearTarget_unheard.yaml``` or ```config/test/farTarget_unheard.yaml```, and use the corresponding test directory.     
 
+
+
+## Pretrained models
+Download pretrained model checkpoints from this [link](https://utexas.box.com/s/0pdi6goecfvbh45n045r2lbb8jsgmonw).
+
+
 ## Citation
 ```
 @InProceedings{Majumder_2021_ICCV,

@@ -3,5 +3,6 @@ data
 .ipynb_checkpoints/
 __pycache__
 runs
+pretrained_models/
 my_config*
 my_scripts
