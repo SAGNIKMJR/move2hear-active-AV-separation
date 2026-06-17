@@ -29,7 +29,7 @@ pip3 install -r requirements.txt
 or by parsing ```requirements.txt``` to get the names and versions of individual dependencies and install them individually.
 
 ## Datasets
-Download the AAViSS-specific datasets from [this link](https://bit.ly/3zGpo4A), extract the zip and put it under the project root. The extracted ```data``` directory should have 3 types of data
+Download the AAViSS-specific datasets from [this link](https://utexas.box.com/s/nwjrzdk2nctk1l6bw78s1iqpq4o67k9x), extract the zip and put it under the project root. The extracted ```data``` directory should have 3 types of data
 1. **audio_data**: the pre-processed and pre-normalized raw monaural audio waveforms for training and evaluation    
 2. **passive_datasets**: the dataset (audio source and receiver pair spatial attributes) for pre-training of passive separators    
 3. **active_datasets**: the dataset (episode specification) for training of Move2Hear policies   
@@ -91,7 +91,7 @@ For unheard sounds, use ```config/test/nearTarget_unheard.yaml``` or ```config/t
 
 
 ## Pretrained models
-Download pretrained model checkpoints from this [link](https://utexas.box.com/s/0pdi6goecfvbh45n045r2lbb8jsgmonw).
+Download pretrained model checkpoints from this [link](https://utexas.box.com/shared/static/fnhc63eljk7p4dait3fwypfq1jzwq55v.zip).
 
 
 ## Citation
